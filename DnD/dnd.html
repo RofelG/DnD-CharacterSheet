@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D&D - Character Sheet</title>
+    <style>
+    .side {grid-area: side;}
+    .main {grid-area: main;}
+    .character {grid-area: chr;}
+    .characterimg {grid-area: chrimg;}
+    .langProf {grid-area: lang;}
+
+    .attributes {grid-area: atr;}
+    .status {grid-area: sta}
+    .skills {grid-area: skl;}
+    .attacks {grid-area: atk;}
+    .spells {grid-area: spl;}
+    .items {grid-area: itm;}
+    .armor {grid-area: arm;}
+
+    .strength {grid-area: str;}
+    .dexterity {grid-area: dex;}
+    .constitution {grid-area: con;}
+    .intelligence {grid-area: int;}
+    .wisdom {grid-area: wis;}
+    .charisma {grid-area: cha;}
+
+    .initiative {grid-area: init;}
+    .armorclass {grid-area: armc;}
+    .health {grid-area: hlth;}
+    .proficiency {grid-area: prof;}
+    .speed {grid-area: sped;}
+    .hitdice {grid-area: hitd;}
+
+    .acrobatics {grid-area: acro;}
+    .animalHandling {grid-area: anim;}
+    .arcana {grid-area: arca;}
+    .athletics {grid-area: athl;}
+    .deception {grid-area: dece;}
+    .history {grid-area: hist;}
+    .insight {grid-area: insi;}
+    .intimidation {grid-area: inti;}
+    .investigation {grid-area: inve;}
+    .medicine {grid-area: medi;}
+    .nature {grid-area: natu;}
+    .perception {grid-area: perc;}
+    .performance {grid-area: perf;}
+    .persuasion {grid-area: pers;}
+    .religion {grid-area: reli;}
+    .sleightOfHand {grid-area: slei;}
+    .stealth {grid-area: stea;}
+    .survival {grid-area: surv;}
+
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+
+    nav {
+        height: 5em;
+        display: grid;
+        align-items: center;
+    }
+
+    .edit {
+        grid-column: 18;
+    }
+
+    .container {
+        display: grid;
+        grid-template-areas:
+            'side side main main main main main main';
+        grid-gap: 10px;
+        background-color: #2196f3;
+        padding: 10px;
+        height: 100vh;
+    }
+
+    .container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 16px;
+    }
+
+    .side {
+        display: grid;
+        grid-template-areas:
+            'chrimg'
+            'chr'
+            'lang';
+        grid-gap: 10px;
+        background-color: #1b3dfc;
+        padding: 10px;
+    }
+
+    .side > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 16px;
+    }
+
+    .main {
+        display: grid;
+        grid-template-areas:
+            'atr atr atr atr atr atr'
+            'sta sta sta sta sta sta'
+            'skl skl skl skl skl skl'
+            'atk atk atk arm arm arm'
+            'spl spl spl spl spl spl'
+            'itm itm itm itm itm itm';
+        grid-template-rows: minmax(50px, auto) 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        background-color: #1b3dfc;
+        padding: 10px;
+    }
+
+    .main > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 16px;
+    }
+
+    .characterimg a {
+        position: absolute;
+    }
+
+    .attributes {
+        display: grid;
+        grid-template-areas:
+            'str dex con int wis cha';
+        grid-gap: 10px;
+        background-color: #1b3dfc;
+        padding: 10px;
+    }
+
+    .status {
+        display: grid;
+        grid-template-areas:
+            'init armc hlth prof sped hitd';
+        grid-gap: 10px;
+        background-color: #1b3dfc;
+        padding: 10px;
+    }
+
+    .skills {
+        display: grid;
+        grid-template-areas:
+            'acro anim arca athl dece hist'
+            'insi inti inve medi natu perc'
+            'perf pers reli slei stea surv';
+        grid-gap: 10px;
+        background-color: #1b3dfc;
+        padding: 10px;
+    }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="edit" href="#" target="_blank" rel="noopener noreferrer">Edit</a>
+    </nav>
+
+    <div class="container">
+        <div class="side">
+            <div class="characterimg">
+                <a href="#"><img src="" alt=""></a>
+            </div>
+            <div class="character">
+                Character Name
+            </div>
+            <!-- Add Progress Bar -->
+            <div class="langProf">
+                Language and Proficiencies
+            </div>
+        </div>
+        <div class="main">
+            <div class="attributes">
+                <div class="strength">STR</div>
+                <div class="dexterity">DEX</div>
+                <div class="constitution">CON</div>
+                <div class="intelligence">INT</div>
+                <div class="wisdom">WIS</div>
+                <div class="charisma">CHA</div>
+            </div>
+            <div class="status">
+                <div class="initiative">initiative</div>
+                <div class="armorclass">armor class</div>
+                <div class="health">health</div>
+                <div class="proficiency">proficiency</div>
+                <div class="speed">speed</div>
+                <div class="hitdice">hit dice</div>
+            </div>
+            <div class="skills">
+                <div class="acrobatics">acrobatics</div>
+                <div class="animalHandling">animal handling</div>
+                <div class="arcana">arcana</div>
+                <div class="athletics">athletics</div>
+                <div class="deception">deception</div>
+                <div class="history">history</div>
+                <div class="insight">insight</div>
+                <div class="intimidation">intimidation</div>
+                <div class="investigation">investigation</div>
+                <div class="medicine">medicine</div>
+                <div class="nature">nature</div>
+                <div class="perception">perception</div>
+                <div class="performance">performance</div>
+                <div class="persuasion">parsuasion</div>
+                <div class="religion">religion</div>
+                <div class="sleightOfHand">sleight of hand</div>
+                <div class="stealth">stealth</div>
+                <div class="survival">survival</div>
+            </div>
+            <div class="attacks">
+                attacks
+            </div>
+            <div class="armor">
+                armor
+            </div>
+            <div class="spells">
+                spells
+            </div>
+            <div class="items">
+                items
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>
